@@ -6,6 +6,7 @@ from PIL import Image, ImageTk
 fenetre = tk.Tk()
 fenetre.title("Pierre - Papier - Ciseaux")
 fenetre.configure(bg="#ffc8dd")
+fenetre.geometry("1024x768")
 
 # Fonction qui choisi au hasard pour l'ordinateur
 def computer_choice():
@@ -57,7 +58,7 @@ def verify_victory():
         paper_button.config(state=tk.DISABLED)
         scissors_button.config(state=tk.DISABLED)
 
-        bouton_re.place(x=100, y=500)
+        bouton_re.place(x=100, y=450)
 
 
 # fonction qui permet de réinitialiser le jeu
@@ -104,20 +105,20 @@ user_label = tk.Label(fenetre, text="Choisissez : ", bg="#cdb4db", fg="white", f
 user_label.pack(pady=10)
 
 rock_button = tk.Button(fenetre, image=rock_img, command=lambda : play("Pierre"))
-rock_button.pack(side=tk.LEFT, padx=10)
+rock_button.place(x=10, y=10)
               
 paper_button = tk.Button(fenetre, image=paper_img, command=lambda : play("Papier"))
-paper_button.pack(side=tk.LEFT, padx=10)
+paper_button.place(x=10, y=150)
 
 scissors_button = tk.Button(fenetre, image=scissors_img, command=lambda : play("Ciseaux"))
-scissors_button.pack(side=tk.LEFT, padx=10)
+scissors_button.place(x=10, y=290)
 
 # Etiqueetes pour afficher les images jouées
 user_img_label = tk.Label(fenetre, image=None, bg="#ffc8dd") # Pas d'image de départ
-user_img_label.pack(pady=10)
+user_img_label.place(x=200, y=50)
 
 computer_img_label = tk.Label(fenetre, image=None, bg="#ffc8dd") # Pas d'image de départ
-computer_img_label.pack(pady=10)
+computer_img_label.place(x=700, y=50)
 
 result_label = tk.Label(fenetre, textvariable=result_var, bg="#ffc8dd", fg="white", font=("Helvetica", 16, "bold"))
 result_label.pack(pady=20)
@@ -150,6 +151,8 @@ history_listbox.pack()
 # Ajout d'un bouton réinitialiser
 
 bouton_re = tk.Button(fenetre,text='Recommencer',command=lambda:reinit())
+bouton_re.configure(bg="#cdb4db", fg="white", height=2, width=12)
 bouton_quit = tk.Button(fenetre, text="Quitter", command=lambda:quit())
-bouton_quit.place(x=100, y=550)
+bouton_quit.configure(bg="#cdb4db", fg="white")
+bouton_quit.place(x=100, y=500)
 fenetre.mainloop()
