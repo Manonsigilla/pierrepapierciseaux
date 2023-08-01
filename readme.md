@@ -9,3 +9,5 @@
 
 Créer un jeu simple où l'utilisateur peut choisir pierre, papier ou ciseaux et jouer contre l'ordinateur.
 Afficher le score et l'historique des coups.
+
+## Modification par Jean-Louis ERRANTE pour exercice sur les PR
